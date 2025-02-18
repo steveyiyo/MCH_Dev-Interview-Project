@@ -1,0 +1,18 @@
+{
+    "Title": "自我介紹",
+    "Description": "快樂學習，快樂成長。一個對科技法律有興趣的人，歡迎來跟我交流交流 ><",
+    "PersonalInformation": {
+        "Experience": [
+            "Research at the National University of Singapore's School of Computing",
+            "LINE Site Reliability Engineering (SRE) Intern"
+        ],
+        "Award": [
+            "2023 APSIG Fellowship",
+            "2022 APNIC Fellowship",
+            "2021 APAN/ISOC Network Engineering Fellowship"
+        ],
+        "Presentation": [
+            "有點多，請到我的個人網站查看。"
+        ]
+    }
+}

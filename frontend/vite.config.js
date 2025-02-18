@@ -5,4 +5,9 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   plugins: [vue()],
   base: '/MCH_Dev-Interview-Project/',
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  }
 });
