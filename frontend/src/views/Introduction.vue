@@ -1,10 +1,26 @@
 <template>
   <div class="introduction">
     <header class="intro-header">
-      <img class="profile-pic" src="https://static-a1.steveyi.net/media/yi/life/image06.jpg" alt="Profile" />
-      <div class="intro-text">
-        <h2>{{ introductionData.Title }}</h2>
-        <p>{{ introductionData.Description }}</p>
+      <div class="intro-left">
+        <img class="profile-pic" src="https://static-a1.steveyi.net/media/yi/life/image06.jpg" alt="Profile" />
+        <div class="intro-text">
+          <h2>{{ introductionData.Title }}</h2>
+          <p>{{ introductionData.Description }}</p>
+        </div>
+      </div>
+      <div class="intro-right">
+        <a href="https://github.com/steveyiyo" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.facebook.com/jackcooku" target="_blank" rel="noopener">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://linkedin.com/in/steveyiyo">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:hi@steveyi.net">
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
     </header>
     <section class="about-section">
@@ -45,8 +61,8 @@ export default {
 
 <style scoped>
 .profile-pic {
-  width: 125px;
-  height: 125px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
   margin-right: 20px;
@@ -59,12 +75,33 @@ export default {
 }
 
 .intro-header {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  justify-content: space-between;
+}
+
+.intro-left {
+  display: flex;
+  align-items: center;
+}
+
+.intro-right {
+  display: flex;
+  font-size: 1.5rem;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.intro-right a {
+  color: #333;
+  text-decoration: none;
+}
+
+.intro-right a:hover {
+  color: #000;
 }
 
 .intro-text {
