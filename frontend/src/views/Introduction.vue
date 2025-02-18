@@ -149,4 +149,29 @@ export default {
   font-size: 1rem;
   line-height: 1.6;
 }
+
+@media (max-width: 768px) {
+  .intro-header {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .intro-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .intro-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
 </style>

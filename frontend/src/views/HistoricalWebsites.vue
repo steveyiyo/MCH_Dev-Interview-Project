@@ -64,7 +64,6 @@ export default {
   margin: 0 auto;
 }
 
-
 .website-card {
   background-color: #f9f9f9;
   border-radius: 10px;
