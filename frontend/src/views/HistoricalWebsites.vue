@@ -3,17 +3,11 @@
     <h2>歷年梅竹黑客松網站</h2>
     <div class="websites-grid">
       <div v-for="website in websites" :key="website.id" class="website-card">
-        <img
-          :src="website.image_url"
-          :alt="website.name"
-          class="website-image"
-        />
+        <img :src="website.image_url" :alt="website.name" class="website-image" />
         <div class="website-info">
           <h3>{{ website.name }}</h3>
           <p>{{ website.description }}</p>
-          <a :href="website.link" target="_blank" class="view-button"
-            >查看網站</a
-          >
+          <a :href="website.link" target="_blank" class="view-button">查看網站</a>
         </div>
       </div>
     </div>
@@ -21,7 +15,24 @@
 </template>
 
 <script>
-// TODO: Fetch websites data from API
+import axios from 'axios'
+export default {
+  data() {
+    return {
+      websites: []
+    }
+  },
+  mounted() {
+    axios.get('https://mch-dev.userwei.com/api/websites')
+      .then(response => {
+        this.websites = response.data
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+}
+
 </script>
 
 <style scoped>
@@ -39,8 +50,12 @@
 }
 
 .websites-grid {
-  /* TODO: Add styles for a responsive grid layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
 }
+
 
 .website-card {
   background-color: #f9f9f9;
