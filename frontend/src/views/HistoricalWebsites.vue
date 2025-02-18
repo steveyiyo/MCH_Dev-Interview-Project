@@ -1,7 +1,13 @@
 <template>
   <div class="historical-websites">
     <h2>歷年梅竹黑客松網站</h2>
-    <div class="websites-grid">
+    <div v-if="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <!-- <div v-else-if="websites.length === 0" class="no-data-message">
+      暫無網站資料
+    </div> -->
+    <div v-else class="websites-grid">
       <div v-for="website in websites" :key="website.id" class="website-card">
         <img :src="website.image_url" :alt="website.name" class="website-image" />
         <div class="website-info">
@@ -19,7 +25,8 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      websites: []
+      websites: [],
+      errorMessage: ''
     }
   },
   mounted() {
@@ -29,6 +36,7 @@ export default {
       })
       .catch(error => {
         console.error(error)
+        this.errorMessage = '無法取得網站資料，請稍後再試。'
       })
   }
 }
@@ -102,5 +110,12 @@ export default {
 
 .view-button:hover {
   background-color: #36383a;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
 }
 </style>
